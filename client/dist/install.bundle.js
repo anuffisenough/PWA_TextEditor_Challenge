@@ -15,7 +15,7 @@
   \***************************/
 /***/ (() => {
 
-eval("const butInstall = document.getElementById('buttonInstall');\n\n// Logic for installing the PWA\n// TODO: Add an event handler to the `beforeinstallprompt` event\nwindow.addEventListener('beforeinstallprompt', (event) => {});\n\n// TODO: Implement a click event handler on the `butInstall` element\nbutInstall.addEventListener('click', async () => {});\n\n// TODO: Add an handler for the `appinstalled` event\nwindow.addEventListener('appinstalled', (event) => {});\n\n\n//# sourceURL=webpack://JATE/./src/js/install.js?");
+eval("const butInstall = document.getElementById('buttonInstall');\n\n// Logic for installing the PWA\n// TODO: Add an event handler to the `beforeinstallprompt` event\nwindow.addEventListener('beforeinstallprompt', (event) => {\n    event.preventDefault();\n    butInstall.style.visibility = 'visible';\n    textHeader.textContent = 'Click the button to install';\n\n});\n\n// TODO: Implement a click event handler on the `butInstall` element\nbutInstall.addEventListener('click', async () => {\n    await event.prompt();\n    butInstall.setAttribute('disabled', true);\n    butInstall.textContent = 'Installed!';\n    });\n\n// TODO: Add an handler for the `appinstalled` event\nwindow.addEventListener('appinstalled', (event) => {\n    textHeader.textContent = 'Successfully installed!';\n    console.log('appinstalled', event);\n});\n\n\n//# sourceURL=webpack://JATE/./src/js/install.js?");
 
 /***/ })
 
